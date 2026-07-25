@@ -1,7 +1,7 @@
 # Week 2: CSS Training & UI Styling
 
 
-## Theory Notes
+
 
 ### Introduction to CSS & Integrating Styles
 - **CSS (Cascading Style Sheets):** Used to style and layout web pages.
