@@ -45,3 +45,9 @@
 - Applied the Box Model concepts (margins, padding, borders) to structure elements.
 - Explored Flexbox for laying out elements side-by-side.
 
+## Files in this Directory
+- **`CSS .docx`**: Document containing detailed theory notes on CSS concepts.
+- **`PROJECT02.HTML`**: The main project file for Week 2, applying the CSS styling concepts learned.
+- **`practice.html`**: HTML file used for practicing various CSS properties, layouts, and selectors.
+- **`style.css`**: The external stylesheet containing the CSS rules for the HTML documents.
+- **`README.md`**: This file, providing an overview of Week 2's contents.
