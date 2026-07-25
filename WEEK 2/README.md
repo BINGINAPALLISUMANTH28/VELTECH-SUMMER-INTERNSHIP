@@ -1,5 +1,5 @@
 # Week 2: CSS Training & UI Styling
-**South Central Railway WWO Vijayawada Division - Full Stack Intern Weekly Report**
+
 
 ## Theory Notes
 
