@@ -37,11 +37,7 @@
 - **Display:** `block`, `inline`, `inline-block`, `none`.
 - **Modern Layouts:** Flexbox (1D layouts) and Grid (2D layouts).
 
-### Responsive Web Design & Media Queries
-- **Responsive Design:** Ensuring the web page looks good on all devices (desktops, tablets, phones).
-- **Viewport Meta Tag:** `<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
-- **Media Queries:** Apply different CSS rules based on device characteristics like width, height, or orientation.
-  - Example: `@media (max-width: 768px) { ... }` applies styles only on screens 768px or smaller.
+
 
 ## Practice Summary
 - Implemented an external stylesheet (`style.css`).
