@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumanth Binginapalli - Portfolio</title>
+    <style>
+:root {
+    /* Deep Dark Theme Colors */
+    --bg-color: #0f172a; /* Slate 900 */
+    --bg-light: #1e293b; /* Slate 800 */
+    --text-main: #f8fafc; /* Slate 50 */
+    --text-muted: #94a3b8; /* Slate 400 */
+    --accent-color: #3b82f6; /* Blue 500 */
+    --accent-hover: #2563eb; /* Blue 600 */
+    --accent-neon: #60a5fa;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --nav-height: 80px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--accent-neon);
+    border: 2px solid var(--accent-color);
+}
+
+.secondary-btn:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+.resume-btn {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-neon);
+    padding: 8px 20px;
+}
+.resume-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-neon);
+}
+
+/* Common Section */
+.section {
+    padding: 100px 10%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    display: inline-block;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.greeting {
+    color: var(--accent-neon);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: monospace;
+}
+
+.name {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.typing-text {
+    color: var(--text-main);
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-neon);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    background-color: var(--card-bg);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.project-description {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech span {
+    font-family: monospace;
+    color: var(--accent-neon);
+    font-size: 0.9rem;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+.project-link:hover {
+    color: var(--accent-color);
+}
+
+/* Contact Section */
+.contact-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-container p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    background-color: var(--bg-light);
+}
+
+footer i {
+    color: #ef4444; /* red for heart */
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* In a real app, you'd add a hamburger menu */
+    }
+    
+    .name {
+        font-size: 3rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 80px 5%;
+    }
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">Sumanth Binginapalli<span></span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="Sumanth_Binginapalli_Resume.pdf" class="btn resume-btn" id="resume-link" target="_blank"
+            title="View my Resume">Resume</a>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="greeting">Hi, I'm</p>
+                <h1 class="name">Sumanth Binginapalli</h1>
+                <h2 class="title">A <span class="typing-text"></span></h2>
+                <p class="description">
+                    I'm a passionate student and developer specializing in building modern web applications,
+                    software solutions, and exploring new technologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
+                    <a href="#projects" class="btn secondary-btn">View Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p>
+                        I am a dedicated Computer Science student with a strong foundation in software engineering and
+                        web development.
+                        My journey involves constantly learning and building projects that solve real-world problems.
+                    </p>
+                    <p>
+I have worked with Java, HTML, CSS, JavaScript and MySQL. I am currently improving my programming, database and problem-solving skills.
+</p>
+
+                </div>
+            </div>
+        </section>
+        <section id="education" class="education section fade-in">
+            <div class="section-title">
+                <h2>Education</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Education 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and
+                            Technology</h3>
+                        <div class="project-tech">
+                            <span>Chennai</span>
+                            <span>Expected May 2028</span>
+                        </div>
+                        <p class="project-description">
+                            Bachelor of Technology in Computer Science and Engineering (AI-ML)<br><br>
+                            <strong>CGPA: 9.16/10.0</strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- Education 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Bhashyam Junior College</h3>
+                        <div class="project-tech">
+                            <span>Guntur</span>
+                            <span>2024</span>
+                        </div>
+                        <p class="project-description">
+                            Intermediate (12th Grade)<br><br>
+                            <strong>91.9%</strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- Education 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Apex High School</h3>
+                        <div class="project-tech">
+                            <span>Ongole</span>
+                            <span>2022</span>
+                        </div>
+                        <p class="project-description">
+                            SSC (10th Grade)<br><br>
+                            <strong>90.5%</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills section fade-in">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages & Core</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section fade-in">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Blood Donor Finder System</h3>
+                        <p class="project-description">
+                            A comprehensive platform designed to connect blood donors with recipients quickly and
+                            efficiently.
+                            Built to handle critical requests and maintain a secure database of donors.
+                        </p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>MySQL</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                        <a href="https://github.com/BINGINAPALLISUMANTH28/Blood-Donor-Finder" class="project-link"><i class="fab fa-github"></i> View Source</a>
+                    </div>
+                </div>
+                <!-- Additional placeholder projects can be added here -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact section fade-in">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-container">
+                <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll
+                    try my best to get back to you!</p>
+                <a href="mailto:sumanthbinginapalli46@gmail.com" class="btn primary-btn">Say Hello</a>
+
+                <div class="social-links">
+                    <a href="https://github.com/BINGINAPALLISUMANTH28" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/binginapalli-sumanth-47772a345/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sumanth Binginapalli. Designed & Built with <i class="fas fa-heart"></i></p>
+    </footer>
+
+    <script>
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+
+const typingText = document.querySelector('.typing-text');
+const words = ['Student', 'Developer', 'Problem Solver', 'Tech Enthusiast'];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100;
+let erasingDelay = 50;
+let newWordDelay = 2000;
+
+function type() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? erasingDelay : typingDelay;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = newWordDelay;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500; // brief pause before next word
+    }
+
+    setTimeout(type, typeSpeed);
+}
+
+// Start typing effect on load
+document.addEventListener('DOMContentLoaded', () => {
+    if (words.length) {
+        setTimeout(type, newWordDelay + 250);
+    }
+});
+
+// Scroll Reveal Animation (Intersection Observer)
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+fadeElements.forEach(element => {
+    appearOnScroll.observe(element);
+});
+    </script>
+</body>
+
+</html>

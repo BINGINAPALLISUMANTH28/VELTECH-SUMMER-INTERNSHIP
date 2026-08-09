@@ -2,7 +2,6 @@
 
 
 
-
 ### Introduction to CSS & Integrating Styles
 - **CSS (Cascading Style Sheets):** Used to style and layout web pages.
 - **Integration Methods:**
