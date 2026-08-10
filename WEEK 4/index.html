@@ -1,699 +1,682 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumanth Binginapalli - Portfolio</title>
+    <meta name="description" content="Portfolio of Binginapalli Sumanth - Computer Science Engineering Student.">
+    <title>Binginapalli Sumanth | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-:root {
-    /* Deep Dark Theme Colors */
-    --bg-color: #0f172a; /* Slate 900 */
-    --bg-light: #1e293b; /* Slate 800 */
-    --text-main: #f8fafc; /* Slate 50 */
-    --text-muted: #94a3b8; /* Slate 400 */
-    --accent-color: #3b82f6; /* Blue 500 */
-    --accent-hover: #2563eb; /* Blue 600 */
-    --accent-neon: #60a5fa;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --nav-height: 80px;
-    --transition: all 0.3s ease;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+        /* Fixed Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+        }
 
-/* Typography */
-h1, h2, h3, h4 {
-    font-weight: 800;
-    line-height: 1.2;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-a {
-    text-decoration: none;
-    color: var(--text-main);
-    transition: var(--transition);
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4da6ff;
+            text-decoration: none;
+        }
 
-ul {
-    list-style: none;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-.primary-btn {
-    background-color: var(--accent-color);
-    color: #fff;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-}
+        .nav-links a:hover {
+            color: #4da6ff;
+        }
 
-.primary-btn:hover {
-    background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-}
+        /* Hero / About Section */
+        .hero {
+            min-height: 100vh;
+            padding: 140px 0 80px;
+            display: flex;
+            align-items: center;
+        }
 
-.secondary-btn {
-    background-color: transparent;
-    color: var(--accent-neon);
-    border: 2px solid var(--accent-color);
-}
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            align-items: center;
+            gap: 70px;
+            width: 100%;
+        }
 
-.secondary-btn:hover {
-    background-color: rgba(59, 130, 246, 0.1);
-    transform: translateY(-2px);
-}
+        .hero-text {
+            text-align: left;
+        }
 
-.resume-btn {
-    border: 1px solid var(--accent-color);
-    color: var(--accent-neon);
-    padding: 8px 20px;
-}
-.resume-btn:hover {
-    background: rgba(59, 130, 246, 0.1);
-}
+        .hero h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
 
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: var(--nav-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    background-color: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    transition: var(--transition);
-}
+        .hero h1 span {
+            color: #4da6ff;
+        }
 
-.navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    height: 70px;
-}
+        .hero p {
+            font-size: 19px;
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 0 30px;
+        }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
+        .contact-info {
+            margin-top: 20px;
+        }
 
-.logo span {
-    color: var(--accent-color);
-}
+        .contact-info a {
+            color: #4da6ff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
+        .contact-info a:first-child {
+            margin-left: 0;
+        }
 
-.nav-links a {
-    font-size: 0.95rem;
-    font-weight: 600;
-    position: relative;
-}
+        .contact-info a:hover {
+            color: #ffffff;
+        }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: var(--transition);
-}
+        /* Profile Photo */
+        .profile-photo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
+        .profile-photo {
+            width: 330px;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #4da6ff;
+            box-shadow: 0 0 35px rgba(77, 166, 255, 0.25);
+        }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent-neon);
-}
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #222;
+            scroll-margin-top: 90px;
+        }
 
-/* Common Section */
-.section {
-    padding: 100px 10%;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 35px;
+            color: #4da6ff;
+            text-align: center;
+        }
 
-.section-title {
-    margin-bottom: 3rem;
-}
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-.section-title h2 {
-    font-size: 2.5rem;
-    color: var(--text-main);
-    display: inline-block;
-}
+        .skill-box {
+            background-color: #111111;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            width: 30%;
+            min-width: 250px;
+        }
 
-.underline {
-    width: 60px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin-top: 10px;
-    border-radius: 2px;
-}
+        .skill-box h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    padding: 0 10%;
-    display: flex;
-    align-items: center;
-}
+        .skill-box ul {
+            list-style-type: square;
+            padding-left: 20px;
+            color: #cccccc;
+        }
 
-.hero-content {
-    max-width: 800px;
-}
+        .skill-box li {
+            margin-bottom: 8px;
+        }
 
-.greeting {
-    color: var(--accent-neon);
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-family: monospace;
-}
 
-.name {
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-    color: #fff;
-}
+        /* Projects Grid */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-.title {
-    font-size: 3rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-}
+        .project-card {
+            margin-bottom: 0;
+            height: 100%;
+        }
 
-.typing-text {
-    color: var(--text-main);
-}
+        .project-card {
+            background-color: #111111;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-.description {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-bottom: 2.5rem;
-}
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #4da6ff;
+        }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-}
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-/* About Section */
-.about-content {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-}
+        .project-card p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
 
-.about-text p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
+        .tech-used {
+            font-weight: bold;
+            color: #4da6ff;
+        }
 
-/* Skills Section */
-.skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
+        .education-item {
+            margin-bottom: 25px;
+        }
 
-.skill-category h3 {
-    margin-bottom: 1rem;
-    color: var(--accent-neon);
-}
+        .education-item h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
 
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+        .education-item h4 {
+            font-size: 18px;
+            color: #4da6ff;
+            margin-bottom: 5px;
+        }
 
-.skill-tag {
-    background-color: var(--bg-light);
-    color: var(--text-main);
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition);
-}
+        .education-item p {
+            color: #cccccc;
+        }
 
-.skill-tag:hover {
-    transform: translateY(-3px);
-    background-color: var(--card-bg);
-    border-color: var(--accent-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+        .cert-list {
+            list-style: none;
+            color: #cccccc;
+        }
 
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-}
+        .cert-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
 
-.project-card {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: var(--transition);
-    border: 1px solid rgba(255,255,255,0.05);
-}
+        .cert-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4da6ff;
+        }
 
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+        /* Education & Certification Cards */
+        .education-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
 
-.project-content {
-    padding: 2rem;
-}
+        .info-card {
+            background-color: #111111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-.project-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #fff;
-}
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: #4da6ff;
+        }
 
-.project-description {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
+        .info-card h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
 
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-}
+        .education-item {
+            margin-bottom: 25px;
+        }
 
-.project-tech span {
-    font-family: monospace;
-    color: var(--accent-neon);
-    font-size: 0.9rem;
-}
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
 
-.project-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    color: var(--text-main);
-}
-.project-link:hover {
-    color: var(--accent-color);
-}
+        .education-item h4 {
+            font-size: 18px;
+            color: #4da6ff;
+            margin-bottom: 6px;
+        }
 
-/* Contact Section */
-.contact-container {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
+        .education-item p {
+            color: #cccccc;
+        }
 
-.contact-container p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
+        .cert-list {
+            list-style: none;
+            color: #cccccc;
+        }
 
-.social-links {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
+        .cert-list li {
+            margin-bottom: 18px;
+            padding-left: 25px;
+            position: relative;
+        }
 
-.social-links a {
-    font-size: 1.8rem;
-    color: var(--text-muted);
-    transition: var(--transition);
-}
+        .cert-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4da6ff;
+            font-weight: bold;
+        }
 
-.social-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-3px);
-}
+        /* Contact Section */
+        .contact-section {
+            padding-bottom: 80px;
+            text-align: center;
+        }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-muted);
-    background-color: var(--bg-light);
-}
+        .contact-note {
+            max-width: 600px;
+            margin: -10px auto 30px;
+            color: #aaaaaa;
+            font-size: 16px;
+        }
 
-footer i {
-    color: #ef4444; /* red for heart */
-}
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+        }
 
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            color: #4da6ff;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 50%;
+            transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .contact-link svg {
+            width: 27px;
+            height: 27px;
+            fill: currentColor;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* In a real app, you'd add a hamburger menu */
-    }
-    
-    .name {
-        font-size: 3rem;
-    }
-    
-    .title {
-        font-size: 2rem;
-    }
-    
-    .section {
-        padding: 80px 5%;
-    }
-}
+        .contact-link:hover {
+            color: #ffffff;
+            border-color: #4da6ff;
+            transform: translateY(-4px);
+            box-shadow: 0 0 18px rgba(77, 166, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777777;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 92%;
+            }
+
+            header {
+                padding: 16px 0;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+                order: 2;
+            }
+
+            .profile-photo-container {
+                order: 1;
+            }
+
+            .profile-photo {
+                width: 230px;
+                height: 230px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-info a:first-child {
+                margin-left: 10px;
+            }
+
+            .skill-box {
+                width: 100%;
+            }
+
+            .education-cards,
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-links {
+                gap: 22px;
+            }
+
+
+        }
+
+        @media (max-width: 520px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .nav-links {
+                gap: 9px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <header class="navbar">
-        <div class="logo">Sumanth Binginapalli<span></span></div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="Sumanth_Binginapalli_Resume.pdf" class="btn resume-btn" id="resume-link" target="_blank"
-            title="View my Resume">Resume</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Binginapalli Sumanth.</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <p class="greeting">Hi, I'm</p>
-                <h1 class="name">Sumanth Binginapalli</h1>
-                <h2 class="title">A <span class="typing-text"></span></h2>
-                <p class="description">
-                    I'm a passionate student and developer specializing in building modern web applications,
-                    software solutions, and exploring new technologies.
+        <!-- Hero / About Section -->
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="hero-content">
+
+                    <div class="hero-text">
+                        <h1>Hi, I'm <span>Binginapalli Sumanth</span></h1>
+
+                        <p>
+                            I am a Computer Science and Engineering (AI-ML) student with a strong background in web development, database management, and programming. I enjoy building practical projects and solving complex problems.
+                        </p>
+
+                       
+                    </div>
+
+                    <div class="profile-photo-container">
+                        <img src="profile.jpg.png" alt="Binginapalli Sumanth Profile Photo" class="profile-photo">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    
+                    <div class="skill-box">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-box">
+                        <h3>Web Technologies</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-box">
+                        <h3>Databases & Tools</h3>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="projects-container">
+                <div class="project-card">
+                    <h3>Blood Donor Finder System</h3>
+                    <p>Developed a blood donor management application featuring donor registration, blood-group filtering, and search functionality. Managed donor information efficiently using database integration.</p>
+                    <span class="tech-used">Technologies: Python, MySQL</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Student Database Management System</h3>
+                    <p>Built a database-driven application to manage student records efficiently. Implemented CRUD operations using SQL queries and designed relational database tables for structured data management.</p>
+                    <span class="tech-used">Technologies: MySQL, SQL</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Angry Bird Game</h3>
+                    <p>Developed a physics-based 2D game implementing projectile motion, gravity, and collision detection. Applied object-oriented programming concepts for modular development.</p>
+                    <span class="tech-used">Technologies: Python</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>FPV Drone with Gas and Fire Detection</h3>
+                    <p>Contributed to an Arduino-based drone system for hazard detection. Integrated gas and thermal sensors for monitoring environmental conditions.</p>
+                    <span class="tech-used">Technologies: Arduino, Sensors</span>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">Education and Certifications</h2>
+
+                <div class="education-cards">
+                    <div class="info-card">
+                        <h3>Academic Education</h3>
+
+                        <div class="education-item">
+                            <h4>B.Tech in Computer Science and Engineering (AI-ML)</h4>
+                            <p>Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology</p>
+                            <p>Expected May 2028 | CGPA: 9.16 / 10.0</p>
+                        </div>
+
+                        <div class="education-item">
+                            <h4>Intermediate (12th Grade)</h4>
+                            <p>Bhashyam Junior College, Guntur</p>
+                            <p>2024 | Percentage: 91.9%</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>SSC (10th Grade)</h4>
+                            <p>Apex High School, Ongole</p>
+                            <p>2022 | Percentage: 90.5%</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Certifications</h3>
+
+                        <ul class="cert-list">
+                            <li>CCNA: Introduction to Networks (Cisco)</li>
+                            <li>CCNA: Switching, Routing and Wireless Essentials (Cisco)</li>
+                            <li>CCNA: Enterprise Networking, Security, and Automation (Cisco)</li>
+                            <li>NPTEL – Introduction to Industry 4.0 and Industrial Internet of Things (Elite + Silver)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+
+                <p class="contact-note">
+                    Feel free to connect with me through any of the platforms below. I'm always open to new opportunities, collaborations, and conversations.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
-                    <a href="#projects" class="btn secondary-btn">View Work</a>
+
+                <div class="contact-links">
+
+                    <!-- Email -->
+                    <a class="contact-link" href="mailto:vtu29602@veltech.edu.in"
+                       aria-label="Email" title="Email">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.4l9 6.1 9-6.1V7H3zm18 10V9.8l-8.44 5.72a1 1 0 0 1-1.12 0L3 9.8V17h18z"/>
+                        </svg>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a class="contact-link" href="https://github.com/BINGINAPALLISUMANTH28"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="GitHub" title="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2 4.4 4.4 0 0 1 .1-3.2s1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.4 4.4 0 0 1 .1 3.2A4.7 4.7 0 0 1 19 12.6c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a class="contact-link" href="https://linkedin.com/in/binginapalli-sumanth-b827053b2"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="LinkedIn" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5.2 3.3A2.3 2.3 0 1 1 .6 3.3a2.3 2.3 0 0 1 4.6 0zM1 8h4.4v14H1V8zm7.2 0h4.2v1.9h.1c.6-1.1 2-2.3 4.1-2.3 4.4 0 5.2 2.9 5.2 6.7V22h-4.4v-6.8c0-1.6 0-3.7-2.3-3.7s-2.6 1.8-2.6 3.6V22H8.2V8z"/>
+                        </svg>
+                    </a>
+
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about section">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="about-content fade-in">
-                <div class="about-text">
-                    <p>
-                        I am a dedicated Computer Science student with a strong foundation in software engineering and
-                        web development.
-                        My journey involves constantly learning and building projects that solve real-world problems.
-                    </p>
-                    <p>
-I have worked with Java, HTML, CSS, JavaScript and MySQL. I am currently improving my programming, database and problem-solving skills.
-</p>
-
-                </div>
-            </div>
-        </section>
-        <section id="education" class="education section fade-in">
-            <div class="section-title">
-                <h2>Education</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="projects-grid">
-                <!-- Education 1 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and
-                            Technology</h3>
-                        <div class="project-tech">
-                            <span>Chennai</span>
-                            <span>Expected May 2028</span>
-                        </div>
-                        <p class="project-description">
-                            Bachelor of Technology in Computer Science and Engineering (AI-ML)<br><br>
-                            <strong>CGPA: 9.16/10.0</strong>
-                        </p>
-                    </div>
-                </div>
-                <!-- Education 2 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Bhashyam Junior College</h3>
-                        <div class="project-tech">
-                            <span>Guntur</span>
-                            <span>2024</span>
-                        </div>
-                        <p class="project-description">
-                            Intermediate (12th Grade)<br><br>
-                            <strong>91.9%</strong>
-                        </p>
-                    </div>
-                </div>
-                <!-- Education 3 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Apex High School</h3>
-                        <div class="project-tech">
-                            <span>Ongole</span>
-                            <span>2022</span>
-                        </div>
-                        <p class="project-description">
-                            SSC (10th Grade)<br><br>
-                            <strong>90.5%</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="skills" class="skills section fade-in">
-            <div class="section-title">
-                <h2>My Skills</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Languages & Core</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
-                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
-                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
-                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
-                        <span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
-                        <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects section fade-in">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Blood Donor Finder System</h3>
-                        <p class="project-description">
-                            A comprehensive platform designed to connect blood donors with recipients quickly and
-                            efficiently.
-                            Built to handle critical requests and maintain a secure database of donors.
-                        </p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>MySQL</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                        <a href="https://github.com/BINGINAPALLISUMANTH28/Blood-Donor-Finder" class="project-link"><i class="fab fa-github"></i> View Source</a>
-                    </div>
-                </div>
-                <!-- Additional placeholder projects can be added here -->
-            </div>
-        </section>
-
-        <section id="contact" class="contact section fade-in">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-container">
-                <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll
-                    try my best to get back to you!</p>
-                <a href="mailto:sumanthbinginapalli46@gmail.com" class="btn primary-btn">Say Hello</a>
-
-                <div class="social-links">
-                    <a href="https://github.com/BINGINAPALLISUMANTH28" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/binginapalli-sumanth-47772a345/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Sumanth Binginapalli. Designed & Built with <i class="fas fa-heart"></i></p>
+        <div class="container">
+            <p>&copy; 2024 Binginapalli Sumanth. Built with HTML, CSS, and JavaScript.</p>
+        </div>
     </footer>
 
-    <script>
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-
-const typingText = document.querySelector('.typing-text');
-const words = ['Student', 'Developer', 'Problem Solver', 'Tech Enthusiast'];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingDelay = 100;
-let erasingDelay = 50;
-let newWordDelay = 2000;
-
-function type() {
-    const currentWord = words[wordIndex];
-
-    if (isDeleting) {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let typeSpeed = isDeleting ? erasingDelay : typingDelay;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = newWordDelay;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 500; // brief pause before next word
-    }
-
-    setTimeout(type, typeSpeed);
-}
-
-// Start typing effect on load
-document.addEventListener('DOMContentLoaded', () => {
-    if (words.length) {
-        setTimeout(type, newWordDelay + 250);
-    }
-});
-
-// Scroll Reveal Animation (Intersection Observer)
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('appear');
-            observer.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-fadeElements.forEach(element => {
-    appearOnScroll.observe(element);
-});
-    </script>
 </body>
-
 </html>
